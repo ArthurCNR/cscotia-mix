@@ -1,0 +1,22 @@
+{
+  "name": "CSCotia - Mix",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "Gerador de time em tempo real utilizando javascrit, css, html, nodejs, socket.io",
+  "main": "server.js",
+
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "ArthurCNR",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "socket.io": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
