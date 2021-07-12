@@ -36,7 +36,7 @@ io.on('connection', socket => {
     info[1] = teams;
     info[2] = teams_amount;
     var sendd = "OJ" + JSON.stringify(info);
-    socket.send(sendd);
+    socket.emit(sendd);
 
   socket.on('joinRoom', ({ username, room }) => {
     
@@ -44,12 +44,14 @@ io.on('connection', socket => {
 
     socket.join(user.room);
 
+    socket.emit('message', formatMessage(botName, 'Bem vindo ao CSCotia!'));
+
       // Update users list
     function outputUsers(users) {
      var sendd = "NU" + JSON.stringify(users)
      users.forEach((username) => {
-        socket.send(sendd);
-      });
+     socket.emit(sendd);
+    });
     }
 
     if(checkInput(username)) {
@@ -57,7 +59,7 @@ io.on('connection', socket => {
     console.log('Usuarios ativos:', users);
     outputUsers(users);
   } else {
-    console.log(sendd);
+    //console.log(sendd);
   }
     
     var numClients = io.sockets.adapter.rooms[user.room];
@@ -138,9 +140,8 @@ io.on('connection', socket => {
     function teams_list_send_all(teams) {
       var sendd = "NT" + JSON.stringify(teams)
       users.forEach((username) => {
-        socket.send(sendd);
+      socket.emit(sendd);
       });
-      console.log(sendd);
       wrtiteToTeamsList(teams);
     }
 
