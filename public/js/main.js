@@ -79,13 +79,10 @@ function outputMessage(message) {
   div.classList.add('message');
   const p = document.createElement('p');
   p.classList.add('meta');
-  //p.innerText = message.username;
-  //p.innerHTML += `<span>${message.time}</span>`;
+  p.innerText = message.username;
+  p.style.color = "#94e001";
+  p.innerHTML += `<span style="color: white;">: ${message.text}</span>`;
   div.appendChild(p);
-  const para = document.createElement('p');
-  para.classList.add('text');
-  para.innerText = message.text;
-  div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
 }
 
@@ -117,8 +114,7 @@ function outputUsers(users) {
 document.getElementById('reRoll').onclick = function() {
   const randomizer = confirm('Are you sure you randomizer?');
   if (randomizer) {
-    socket.send("RR");
-    console.log('RR');
+    socket.emit("RR");
   } else {
   }
 }
