@@ -1,10 +1,12 @@
-# ChatCord App
-Realtime chat app with websockets using Node.js, Express and Socket.io with Vanilla JS on the frontend with a custom UI
-[![Run on Repl.it](https://repl.it/badge/github/bradtraversy/chatcord)](https://repl.it/github/bradtraversy/chatcord)
-## Usage
+# CSCotia - Mix
+Gerador de time em tempo real utilizando javascrit, css, html, nodejs, socket.io
+
+## Como usar
 ```
 npm install
 npm run dev
+or
+npm run start
 
 Go to localhost:3000
 ```
