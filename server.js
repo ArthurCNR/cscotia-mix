@@ -59,7 +59,7 @@ io.on('connection', socket => {
     console.log('Usuarios ativos:', users);
     outputUsers(users);
   } else {
-    //console.log(sendd);
+    console.log(sendd);
   }
     
     var numClients = io.sockets.adapter.rooms[user.room];
