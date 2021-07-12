@@ -141,6 +141,31 @@ io.on('connection', socket => {
         socket.send(sendd);
       });
       console.log(sendd);
+      wrtiteToTeamsList(teams);
+    }
+
+    function wrtiteToTeamsList(all_teams) {
+      var send_this = "";
+    
+      //  for each team
+      for (i = 0; i < all_teams.length; i++) {
+    
+        // the array is defined and has at least one element
+        if (typeof all_teams[i] !== 'undefined' && all_teams[i].length > 0) {
+          var addthis = "";
+    
+          // For each team member in team
+          for (j = 0; j < all_teams[i].length; j++) {
+            addthis += "<h2>"+all_teams[i][j]+"</h2>";
+          }
+          send_this += "<h1>Time " + (i+1) + "</h1>" + addthis;
+        }
+    
+      // Update teams list
+      //document.getElementById('teams_list').innerHTML = send_this;
+      io.to(user.room).emit('teamNames', {send_this});
+    }
+      console.log(send_this)
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -184,7 +209,7 @@ io.on('connection', socket => {
           io.to(user.room).emit('roomUsersCount', {
             usercount: numClients[socket.room]
           });
-          console.log('Clinente desconectado', user.username)
+          console.log('Player desconectado', user.username)
           var clean = user.username
           for (i = 0; i < users.length; i++) {
             if(users[i] == clean) {
@@ -195,7 +220,7 @@ io.on('connection', socket => {
 
       io.to(user.room).emit(
         'message',
-        formatMessage(botName, `${user.username} has left the chat`)
+        formatMessage(botName, `${user.username} saiu da lobby`)
       );
 
       // Send users and room info
