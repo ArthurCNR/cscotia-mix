@@ -36,7 +36,7 @@ io.on('connection', socket => {
     info[1] = teams;
     info[2] = teams_amount;
     var sendd = "OJ" + JSON.stringify(info);
-    socket.emit(sendd);
+    socket.send(sendd);
 
   socket.on('joinRoom', ({ username, room }) => {
     
@@ -50,7 +50,7 @@ io.on('connection', socket => {
     function outputUsers(users) {
      var sendd = "NU" + JSON.stringify(users)
      users.forEach((username) => {
-     socket.emit(sendd);
+     socket.send(sendd);
     });
     }
 
@@ -140,7 +140,7 @@ io.on('connection', socket => {
     function teams_list_send_all(teams) {
       var sendd = "NT" + JSON.stringify(teams)
       users.forEach((username) => {
-      socket.emit(sendd);
+      socket.send(sendd);
       });
       wrtiteToTeamsList(teams);
     }
@@ -233,6 +233,6 @@ io.on('connection', socket => {
   });
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
