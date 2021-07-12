@@ -1,0 +1,104 @@
+<?php
+// Inicia sessões
+session_start();
+
+// Verifica se existe os dados da sessão de login
+if(!isset($_SESSION["username"]) || !isset($_SESSION["room"]))
+{
+// Usuário não logado! Redireciona para a página de login
+header("Location: index.php");
+exit;
+}
+?>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style2.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="https://i.imgur.com/wPRocRO.png" />
+    <title>CSCotia - MIX</title>
+  </head>
+  <body class="bg">
+    <div class="main-padd">
+      <div class="container">
+        <div class="row centered">
+          <div class="col-md-6">
+            <div class="box-tall darker-bg text-left">
+              <div class="bordering">
+                <div class="teams" id="teams_list">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box-tall darker-bg">
+              <div class="bordering">
+                <div class="row">
+                <div class="col-md-12">
+                <h1><i class="fas fa-users"></i> Lista de Jogadores (<span id="users-count"></span>)</h1>
+                <p>Sala: <span id="room-name"></span></p>  
+                <div id="users">
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" id="sair-buttn" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-log-out"></span> Sair
+            </button>
+          </div>
+          <div class="col-md-6">
+            <div class="box-tall darker-bg">
+              <div class="bordering">
+                <div class="row">
+                <div class="col-md-12">
+                <button disabled class="button_roll" id="reRoll"></button>
+                <h1><i class="fas fa-users"></i> Chat</h1>
+                <div class="chat-messages"></div>
+                <div class="chat-form-container">
+                  <form id="chat-form">
+                    <input
+                      id="msg"
+                      type="text"
+                      placeholder="Enter Message"
+                      required
+                      autocomplete="off"
+                    />
+                    <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                  </form>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- CHAT-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="./js/jquery-3.2.1.slim.min.js"></script>
+    
+  </body>
+</html>

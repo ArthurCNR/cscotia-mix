@@ -1,0 +1,132 @@
+.main-padd {
+  padding: 50px;
+}
+body {
+  background-color: #393738;
+  color: #ffffff;
+}
+.bg {
+  background-image: url("https://i.imgur.com/rX66epE.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.darker-bg {
+  background-color: rgba(33, 37, 41, 0.5);
+  margin: 0px 10 0 10;
+
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+  border-radius: 5px;
+}
+.marg-fix {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.box-tall {
+  min-height: 80vh;
+}
+.centered {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.bordering {
+  padding:10px;
+}
+
+.buttn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 22px;
+}
+
+.button_roll {
+  background-color: #0000ff;
+  border: none;
+  width: 100%;
+  color: #ffffff;
+  padding: 16px 32px;
+  margin: 0px 0 10px 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  opacity: 0.95;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button_roll:hover {background-color: #000099}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content .list_item {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content .list_item:hover {
+    background-color: #ddd;
+}
+.show {
+    display: block;
+}
+input[type=text] {
+  width: 100%;
+  padding: 18px 20px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #111011;
+  background-color: #252324;
+  color: #ffffff;
+}
+
+h1 {
+  border-bottom: 2px solid #111011;
+}
+h2 {
+  font-size: 20px;
+  padding: 16px 24px;
+  background-color: #117a8b;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #000;
+}
