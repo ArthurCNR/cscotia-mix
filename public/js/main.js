@@ -22,6 +22,11 @@ socket.on('roomUsers', ({ room, users }) => {
   outputUsers(users);
 });
 
+// Get teams and users
+socket.on('teamNames', ({ send_this }) => {
+  outputTeamName(send_this);
+});
+
 socket.on('teamUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
@@ -39,43 +44,13 @@ function update_team_size(size) {
 
 // Message from server
 socket.on('message', (message) => {
-
   console.log(message);
   outputMessage(message);
-
-  if(message.startsWith('NT')) {
-    var all_teams = JSON.parse(message.substring(2));
-    wrtiteToTeamsList(all_teams);
-    console.log('Sorteio finalizado');
-  }
-
-
 
   // Scroll down
   chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
-function wrtiteToTeamsList(all_teams) {
-  var send_this = "";
-
-  //  for each team
-  for (i = 0; i < all_teams.length; i++) {
-
-    // the array is defined and has at least one element
-    if (typeof all_teams[i] !== 'undefined' && all_teams[i].length > 0) {
-      var addthis = "";
-
-      // For each team member in team
-      for (j = 0; j < all_teams[i].length; j++) {
-        addthis += "<h2>"+all_teams[i][j]+"</h2>";
-      }
-      send_this += "<h1>Team " + (i+1) + "</h1>" + addthis;
-    }
-
-  // Update teams list
-  document.getElementById('teams_list').innerHTML = send_this;
-  }
-}
 
 // Message submit
 chatForm.addEventListener('submit', (e) => {
@@ -112,6 +87,10 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
+}
+
+function outputTeamName(send_this) {
+  teamList.innerHTML = send_this;
 }
 
 // Add room name to DOM
