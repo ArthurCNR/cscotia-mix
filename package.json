@@ -1,5 +1,5 @@
 {
-  "name": "CSCotia - Mix",
+  "name": "cscotia-mix",
   "version": "1.0.0",
   "private": "true",
   "description": "Gerador de time em tempo real utilizando javascrit, css, html, nodejs, socket.io",
