@@ -114,7 +114,8 @@ function outputUsers(users) {
 document.getElementById('reRoll').onclick = function() {
   const randomizer = confirm('Are you sure you randomizer?');
   if (randomizer) {
-    socket.emit("RR");
+    socket.send("RR");
+    console.log('RR');
   } else {
   }
 }
