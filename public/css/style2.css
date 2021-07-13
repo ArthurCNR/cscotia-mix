@@ -152,6 +152,7 @@ body {
 }
 
 .chat-messages {
+	background-color: rgba(33, 37, 41, 0.7);
 	padding: 1px;
 	max-height: 660px;
 	min-height: 660px;
