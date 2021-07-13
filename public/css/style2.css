@@ -123,10 +123,10 @@ h1 {
   border-bottom: 2px solid #111011;
 }
 h2 {
-  font-size: 20px;
-  padding: 16px 24px;
-  background-color: #117a8b;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-     -moz-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 10px 6px -6px #000;
+  font-size: 14px;  
+  padding: 14px 20px;  
+  background-color: #117a8b;  
+  -webkit-box-shadow: 0 8px 4px -4px #777;     
+  -moz-box-shadow: 0 8px 4px -4px #777;          
+  box-shadow: 0 8px 4px -4px #000;
 }
