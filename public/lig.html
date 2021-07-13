@@ -19,18 +19,11 @@
     <title>CSCotia - MIX</title>
   </head>
   <body class="bg">
+    <h1>Sorteio de Times</h1>
     <div class="main-padd">
       <div class="container">
         <div class="row centered">
-          <div class="col-md-6">
-            <div class="box-tall darker-bg text-left">
-              <div class="bordering">
-                <div class="teams" id="teams_list">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="box-tall darker-bg">
               <div class="bordering">
                 <div class="col-md-6 marg-fix">
@@ -59,10 +52,18 @@
               </div>
             </div>
           </div>
+          <div class="col-md-4">
+            <div class="box-tall darker-bg text-left">
+              <div class="bordering">
+                <div class="teams" id="teams_list">
+                </div>
+              </div>
+            </div>
+          </div>
           <button type="button" id="sair-buttn" class="btn btn-default btn-sm">
             <span class="glyphicon glyphicon-log-out"></span> Sair
           </button>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="box-tall darker-bg">
               <div class="bordering">
                 <div class="row">
@@ -74,11 +75,11 @@
                     <input
                       id="msg"
                       type="text"
-                      placeholder="Enter Message"
+                      placeholder="Digite uma mensagem..."
                       required
                       autocomplete="off"
                     />
-                    <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                    <button class="botaoenviar"><i class="fas fa-paper-plane"></i> Enviar</button>
                   </form>
                 </div>
                 </div>
