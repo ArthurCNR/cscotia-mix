@@ -196,6 +196,7 @@ body {
 .chat-form-container input[type='text'] {
 	font-size: 16px;
 	padding: 5px;
+	margin-right: 2px;
 	height: 40px;
 	flex: 1;
 }
