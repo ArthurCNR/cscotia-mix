@@ -21,24 +21,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const botName = 'CSCotia';
 
-var users = [];
-var teams = [[], [], [], [], [], [] ]
+var users = [BOT Reggor, BOT Ocinap];
+var teams = [['BOT Reggor'], ['BOT Ocinap'], [], [], [], [] ]
 var teams_amount = 2;
 var current_team = 0;
 
 // Run when client connects
 io.on('connection', socket => {
 
-  var numClients = {};
+  socket.on('joinRoom', ({ username, room }) => {
+    
+    var numClients = {};
 
-  var info = [[], [], 2]
+    var info = [[], [], 2]
     info[0] = users;
     info[1] = teams;
     info[2] = teams_amount;
     var sendd = "OJ" + JSON.stringify(info);
     socket.send(sendd);
-
-  socket.on('joinRoom', ({ username, room }) => {
     
     const user = userJoin(socket.id, username, room);
 
